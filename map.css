@@ -1,0 +1,239 @@
+.main_map {
+    overflow: hidden;
+}
+
+.map {
+    position: absolute;
+    inset: 0;
+    background: #cdd3df;
+}
+
+.map svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------- Метки заведений ---------- */
+.map_pin {
+    position: absolute;
+    transform: translateX(-50%);
+    padding: 8px 18px;
+    border-radius: 14px;
+    background: var(--dark);
+    border-top-color: var(--dark);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: transform 0.2s;
+}
+
+.map_pin::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    margin-left: -12px;
+    border: 12px solid transparent;
+    border-bottom: 0;
+    border-top-color: inherit;
+}
+
+.map_pin.is-selected {
+    background: var(--orange);
+    border-top-color: var(--orange);
+    color: #000000;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: underline;
+    transform: translateX(-50%) scale(1.1);
+}
+
+.map_pin_don {
+    left: 296px;
+    top: 63px;
+}
+
+.map_pin_papa {
+    left: 101px;
+    top: 187px;
+}
+
+/* ---------- Моё местоположение ---------- */
+.map_me {
+    position: absolute;
+    left: 207px;
+    top: 357px;
+    width: 46px;
+    height: 46px;
+    margin: -23px;
+    border-radius: 50%;
+    background: rgba(81, 112, 255, 0.35);
+}
+
+.map_me::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: 50%;
+    background: var(--blue);
+}
+
+.map_me::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(81, 112, 255, 0.4);
+    animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(2.4);
+        opacity: 0;
+    }
+}
+
+.locate_button {
+    position: absolute;
+    right: 20px;
+    bottom: 200px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    background: var(--orange);
+    transition: transform 0.2s;
+}
+
+.locate_button img {
+    width: 28px;
+}
+
+.locate_button:active {
+    transform: rotate(90deg) scale(0.9);
+}
+
+/* ---------- Карточка выбранного заведения ---------- */
+.place_card {
+    position: absolute;
+    left: 14px;
+    right: 16px;
+    bottom: 36px;
+    height: 150px;
+    padding: 12px 14px 12px 30px;
+    border: 2px solid #000000;
+    border-radius: 22px;
+    background: var(--dark);
+    animation: up 0.45s ease-out;
+}
+
+.place_card_photo {
+    position: absolute;
+    left: 28px;
+    top: 10px;
+    width: 76px;
+    height: 88px;
+    border: 5px solid var(--orange);
+    border-radius: 12px;
+    background: var(--orange);
+    object-fit: cover;
+}
+
+.place_card_name {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    padding: 6px 8px;
+    border-radius: 12px;
+    background: var(--orange);
+    color: #000000;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.place_card_status {
+    position: absolute;
+    left: 130px;
+    top: 22px;
+    font-size: 17px;
+}
+
+.place_card_status small {
+    display: block;
+    margin-left: 15px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.place_card_distance {
+    position: absolute;
+    left: 130px;
+    top: 70px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.place_card_distance::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.place_card_actions {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.card_round_button {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--orange);
+}
+
+.card_round_button img {
+    width: 18px;
+    height: 18px;
+}
+
+.place_card_negative {
+    position: absolute;
+    left: 134px;
+    right: 14px;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 34px;
+    padding: 0 6px 0 14px;
+    border-radius: 17px;
+    background: var(--lime);
+    color: #000000;
+    font-size: 12px;
+    line-height: 1.1;
+}
+
+.place_card_negative b {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #ffffff;
+    font-size: 13px;
+}

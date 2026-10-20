@@ -1,0 +1,274 @@
+@font-face {
+    font-family: "Gagalin-Regular";
+    src: url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.ttf") format("truetype");
+}
+
+:root {
+    --orange: #ff751f;
+    --dark: #1c2120;
+    --gray: #2e2e2e;
+    --muted: #c2c7cb;
+    --green: #00bf63;
+    --lime: #bde54e;
+    --blue: #5170ff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: #000000;
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    border: 0;
+    background: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Экран приложения ---------- */
+.app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 414px;
+    height: 100dvh;
+    max-height: 896px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: var(--gray);
+    animation: fade 0.25s ease-out;
+}
+
+.app_dark {
+    background: var(--dark);
+}
+
+.main {
+    position: relative;
+    flex: 1;
+    overflow-y: auto;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes up {
+    from {
+        transform: translateY(60%);
+        opacity: 0;
+    }
+}
+
+/* ---------- Логотип ---------- */
+.logo_icon {
+    width: 66px;
+    height: 66px;
+    padding: 8px;
+    border-radius: 16px;
+    background: var(--orange);
+}
+
+.logo_text {
+    display: inline-flex;
+    align-items: center;
+    font-family: "Gagalin-Regular", Impact, sans-serif;
+    font-size: 22px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.logo_mark {
+    margin-left: 4px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: var(--orange);
+    color: var(--dark);
+    font-style: normal;
+}
+
+/* ---------- Шапка ---------- */
+.header {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    padding: 0 22px;
+    background: var(--dark);
+    border-bottom: 4px solid var(--orange);
+}
+
+.header .logo_text {
+    position: absolute;
+    left: 102px;
+}
+
+.city {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.city img {
+    width: 22px;
+    height: 22px;
+}
+
+.header_sub {
+    padding: 0 28px;
+}
+
+.header_sub .logo_text {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.back_button {
+    width: 44px;
+    height: 30px;
+}
+
+.back_button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.header_actions {
+    display: flex;
+    gap: 10px;
+}
+
+.header_round_button {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.header_round_button img {
+    width: 18px;
+    height: 18px;
+}
+
+/* ---------- Нижнее меню ---------- */
+.tab_bar {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: space-around;
+    height: 94px;
+    padding: 0 12px;
+    background: var(--dark);
+    border-top: 4px solid var(--orange);
+}
+
+.tab_link {
+    display: grid;
+    place-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.tab_link img {
+    width: 48px;
+    height: 48px;
+}
+
+.tab_link:active {
+    transform: scale(0.92);
+}
+
+.tab_link.is-active {
+    background: var(--orange);
+}
+
+/* ---------- Отклик на нажатие ---------- */
+.is-pop {
+    animation: pop 0.35s ease;
+}
+
+@keyframes pop {
+    40% { transform: scale(1.3); }
+}
+
+/* ---------- Строка с рейтингом заведения ---------- */
+.place_meta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.rating_icon {
+    width: 14px;
+    height: 14px;
+}
+
+.meta_separator {
+    width: 1px;
+    height: 14px;
+    background: var(--muted);
+}
+
+.text_lime {
+    color: var(--lime);
+}
+
+.text_green {
+    color: var(--green);
+}
+
+/* ---------- Фото и заголовок заведения (страницы place и review) ---------- */
+.place_content {
+    padding: 30px 30px 0;
+}
+
+.place_photo {
+    display: block;
+    width: 100%;
+    height: 220px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.place_title {
+    margin: 22px 0 14px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

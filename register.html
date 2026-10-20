@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Регистрация — ШаваНада</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+    <div class="app app_dark">
+
+        <div class="auth_logo">
+            <img class="logo_icon" src="images/Wrap-1.svg" alt="">
+            <span class="logo_text">Шава<i class="logo_mark">Нада</i></span>
+        </div>
+
+        <form class="auth_sheet" data-next="map.html">
+            <h1>Регистрация</h1>
+
+            <label>ИМЯ</label>
+            <input type="text" placeholder="Имя" required>
+
+            <label>ПАРОЛЬ</label>
+            <input type="password" placeholder="******" required>
+
+            <label>ПОВТОР ПАРОЛЯ</label>
+            <input type="password" placeholder="******" required>
+
+            <button class="auth_button">Подтвердить</button>
+
+            <p>Есть аккаунт? <a href="login.html">Войти</a></p>
+        </form>
+
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

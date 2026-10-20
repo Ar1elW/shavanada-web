@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Профиль — ШаваНада</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <header class="header">
+            <img class="logo_icon" src="images/Wrap-1.svg" alt="">
+            <span class="logo_text">Шава<i class="logo_mark">Нада</i></span>
+            <span class="city"><img src="images/Location.svg" alt="">Брест</span>
+        </header>
+
+        <main class="main">
+            <div class="profile_head">
+                <div class="profile_avatar">
+                    <img src="images/Profile-1.svg" alt="">
+                    <b class="profile_avatar_plus">+</b>
+                </div>
+
+                <div>
+                    <h2 class="profile_name">Мага <button class="edit_button"><img src="images/Edit.svg" alt=""></button></h2>
+                    <small class="profile_level">Любитель<br>(10 отзывов)</small>
+                </div>
+            </div>
+
+            <p class="profile_section_title">Персональные данные</p>
+
+            <div class="profile_field">
+                <small>Почта</small>
+                <div class="profile_field_value">
+                    magamed78@gmail.com
+                    <button class="edit_button"><img src="images/Edit.svg" alt=""></button>
+                </div>
+            </div>
+
+            <div class="profile_field">
+                <small>Пароль</small>
+                <div class="profile_field_value">
+                    <span id="password_value">********</span>
+                    <button class="eye_button"><img src="images/Eyelashes 2D.svg" alt=""></button>
+                    <button class="edit_button"><img src="images/Edit.svg" alt=""></button>
+                </div>
+            </div>
+
+            <p class="profile_since">Пользователь с 12.09.2026</p>
+        </main>
+
+        <nav class="tab_bar">
+            <a class="tab_link" href="map.html"><img src="images/Paper Map-1.svg" alt="map"></a>
+            <a class="tab_link" href="favorites.html"><img src="images/Heart-1.svg" alt="favorites"></a>
+            <a class="tab_link is-active" href="profile.html"><img src="images/Profile-1.svg" alt="profile"></a>
+            <a class="tab_link" href="search.html"><img src="images/Search.svg" alt="search"></a>
+        </nav>
+
+    </div>
+
+    <script src="common.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

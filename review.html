@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Отзыв — ШаваНада</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="review.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <header class="header header_sub">
+            <a class="back_button" href="javascript:history.back()"><img src="images/Left Arrow.svg" alt="Назад"></a>
+            <span class="logo_text">Шава<i class="logo_mark">Нада</i></span>
+            <span class="header_actions">
+                <button class="header_round_button like_button"><img src="images/Heart.svg" alt=""></button>
+                <button class="header_round_button"><img src="images/Share-1.svg" alt=""></button>
+            </span>
+        </header>
+
+        <main class="main">
+            <div class="place_content place_content_review">
+                <img class="place_photo" src="images/DonKebab.png" alt="">
+                <h2 class="place_title place_title_review">Don Kebab - Брест, Пушкинская улица, 40/1</h2>
+            </div>
+
+            <div class="vote_bar">
+                <span class="vote_buttons">
+                    <button class="vote_button vote_up">
+                        <img class="vote_icon vote_icon_off" src="images/Like.svg" alt="">
+                        <img class="vote_icon vote_icon_on" src="images/Like_Active.svg" alt="">
+                    </button>
+                    <button class="vote_button vote_down is-selected">
+                        <img class="vote_icon vote_icon_off" src="images/Like.svg" alt="">
+                        <img class="vote_icon vote_icon_on" src="images/Like_Active.svg" alt="">
+                    </button>
+                </span>
+
+                <div class="vote_hint">
+                    <button class="toilet_button">
+                        <img class="toilet_icon toilet_icon_off" src="images/WC-1.svg" alt="">
+                        <img class="toilet_icon toilet_icon_on" src="images/WC.svg" alt="">
+                    </button>
+                    Если вам стало<br>плохо после еды
+                </div>
+            </div>
+
+            <textarea class="review_textarea" placeholder="Оставьте здесь свой комментарий ..."></textarea>
+            <button class="send_button">Оставить отзыв</button>
+        </main>
+
+        <nav class="tab_bar">
+            <a class="tab_link" href="map.html"><img src="images/Paper Map-1.svg" alt="map"></a>
+            <a class="tab_link" href="favorites.html"><img src="images/Heart-1.svg" alt="favorites"></a>
+            <a class="tab_link" href="profile.html"><img src="images/Profile.svg" alt="profile"></a>
+            <a class="tab_link" href="search.html"><img src="images/Search.svg" alt="search"></a>
+        </nav>
+
+    </div>
+
+    <script src="common.js"></script>
+    <script src="review.js"></script>
+</body>
+</html>

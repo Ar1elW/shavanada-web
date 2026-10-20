@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Поиск — ШаваНада</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="search.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <header class="header">
+            <img class="logo_icon" src="images/Wrap-1.svg" alt="">
+            <span class="logo_text">Шава<i class="logo_mark">Нада</i></span>
+            <span class="city"><img src="images/Location.svg" alt="">Брест</span>
+        </header>
+
+        <main class="main">
+            <label class="search_bar">
+                <img src="images/Search.svg" alt="">
+                <input id="search_input" placeholder="поиск" autocomplete="off">
+            </label>
+
+            <a class="search_item" href="place.html">
+                <img class="search_photo" src="images/DonKebab.png" alt="">
+                <h3>Don Kebab - Брест, Пушкинская улица, 40/1</h3>
+                <div class="place_meta">
+                    <span>108 отзывов</span>
+                    <i class="meta_separator"></i>
+                    <img class="rating_icon" src="images/Like.svg" alt="">
+                    <span>84%</span>
+                    <i class="meta_separator"></i>
+                    <img src="images/WC.svg" width="16" alt="">
+                    <span class="text_lime">4,3% (4)</span>
+                    <em class="place_closing">Закр. в 21:30</em>
+                </div>
+            </a>
+
+            <a class="search_item" href="place.html">
+                <img class="search_photo" src="images/PapaDoner.png" alt="">
+                <h3>Papa Doner - Брест, Советская улица, 30</h3>
+                <div class="place_meta">
+                    <span>125 отзывов</span>
+                    <i class="meta_separator"></i>
+                    <img class="rating_icon" src="images/Like.svg" alt="">
+                    <span>61%</span>
+                    <i class="meta_separator"></i>
+                    <img src="images/WC.svg" width="16" alt="">
+                    <span class="text_lime">13,7% (11)</span>
+                    <em class="place_closing">Закр. в 22:00</em>
+                </div>
+            </a>
+        </main>
+
+        <nav class="tab_bar">
+            <a class="tab_link" href="map.html"><img src="images/Paper Map-1.svg" alt="map"></a>
+            <a class="tab_link" href="favorites.html"><img src="images/Heart-1.svg" alt="favorites"></a>
+            <a class="tab_link" href="profile.html"><img src="images/Profile.svg" alt="profile"></a>
+            <a class="tab_link is-active" href="search.html"><img src="images/Search-1.svg" alt="search"></a>
+        </nav>
+
+    </div>
+
+    <script src="common.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

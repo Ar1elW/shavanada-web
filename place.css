@@ -1,0 +1,156 @@
+.place_divider {
+    height: 1px;
+    margin-top: 14px;
+    background: #a9a9a9;
+}
+
+/* ---------- Владелец заведения ---------- */
+.owner_row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 24px;
+}
+
+.owner_avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.owner_name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+}
+
+.verified_badge {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--blue);
+    font: 700 13px sans-serif;
+    text-decoration: none;
+}
+
+.owner_info small {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ---------- Статус: открыто и расстояние ---------- */
+.status_bar {
+    display: flex;
+    height: 48px;
+    border-top: 1px solid #a9a9a9;
+    border-bottom: 1px solid #a9a9a9;
+    font-size: 12px;
+}
+
+.status_item {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 12px;
+    padding: 0 30px;
+}
+
+.status_item + .status_item {
+    border-left: 1px solid #a9a9a9;
+}
+
+.status_item_ok {
+    color: var(--green);
+}
+
+.status_dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.status_dot_ok {
+    background: var(--green);
+}
+
+/* ---------- Отзыв ---------- */
+.review_block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 8px;
+    padding: 14px 24px;
+}
+
+.review_author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.review_author_icon {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    background: var(--orange);
+}
+
+.review_author_icon img {
+    width: 24px;
+}
+
+.review_author em {
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.review_text {
+    width: calc(100% - 40px);
+    margin-top: 6px;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.review_like {
+    width: 26px;
+    height: 26px;
+}
+
+.review_like_icon {
+    width: 100%;
+    height: 100%;
+}
+
+.review_like_on {
+    display: none;
+}
+
+.review_like.is-liked .review_like_off {
+    display: none;
+}
+
+.review_like.is-liked .review_like_on {
+    display: block;
+}
+
+.review_link {
+    width: 100%;
+    margin-top: 6px;
+    text-align: center;
+    font-size: 19px;
+    color: var(--blue);
+    text-decoration: underline;
+}

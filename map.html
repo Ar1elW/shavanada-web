@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Карта — ШаваНада</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="map.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <header class="header">
+            <img class="logo_icon" src="images/Wrap-1.svg" alt="">
+            <span class="logo_text">Шава<i class="logo_mark">Нада</i></span>
+            <span class="city"><img src="images/Location.svg" alt="">Брест</span>
+        </header>
+
+        <main class="main main_map">
+            <div class="map">
+                <svg viewBox="0 0 414 712" preserveAspectRatio="none">
+                    <rect x="20" y="3" width="128" height="153" rx="22" fill="#dbe7de"/>
+                    <rect x="290" y="95" width="130" height="160" rx="50" fill="#d8e6dc"/>
+                    <rect x="30" y="407" width="128" height="113" rx="24" fill="#dbe7de"/>
+                    <path d="M0 215C120 190 220 275 414 285" stroke="#d3e5db" stroke-width="46" fill="none"/>
+
+                    <g stroke="#ffffff" fill="none">
+                        <path d="M87 0V712M325 0V712" stroke-width="10"/>
+                        <path d="M190 0V260" stroke-width="8"/>
+                        <path d="M0 148H290M0 350H414" stroke-width="10"/>
+                    </g>
+
+                    <g font-size="9" fill="#9a9fa8" letter-spacing="1">
+                        <text x="142" y="40">CEDAR AVENUE</text>
+                        <text x="208" y="355">MARKET BOULEVARD</text>
+                    </g>
+                </svg>
+
+                <button class="map_pin map_pin_don is-selected" data-place="don">Don Kebab</button>
+                <button class="map_pin map_pin_papa" data-place="papa">Papa Doner</button>
+
+                <div class="map_me"></div>
+            </div>
+
+            <button class="locate_button"><img src="images/My Location.svg" alt="Моё местоположение"></button>
+
+            <a class="place_card" href="place.html">
+                <img class="place_card_photo" src="images/MapPlace.png" alt="">
+                <span class="place_card_name">Don Kebab</span>
+
+                <span class="place_card_status text_green">● Открыто<small>Закр. в 21:30</small></span>
+                <span class="place_card_distance">Через ~410 м</span>
+
+                <span class="place_card_actions">
+                    <button class="card_round_button like_button"><img src="images/Heart.svg" alt=""></button>
+                    <button class="card_round_button"><img src="images/Share-1.svg" alt=""></button>
+                </span>
+
+                <span class="place_card_negative">Негативные отзывы<br>со здоровьем<b>4</b></span>
+            </a>
+        </main>
+
+        <nav class="tab_bar">
+            <a class="tab_link is-active" href="map.html"><img src="images/Paper Map.svg" alt="map"></a>
+            <a class="tab_link" href="favorites.html"><img src="images/Heart-1.svg" alt="favorites"></a>
+            <a class="tab_link" href="profile.html"><img src="images/Profile.svg" alt="profile"></a>
+            <a class="tab_link" href="search.html"><img src="images/Search.svg" alt="search"></a>
+        </nav>
+
+    </div>
+
+    <script src="common.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>

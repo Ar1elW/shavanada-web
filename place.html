@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Don Kebab — ШаваНада</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="place.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <header class="header header_sub">
+            <a class="back_button" href="javascript:history.back()"><img src="images/Left Arrow.svg" alt="Назад"></a>
+            <span class="logo_text">Шава<i class="logo_mark">Нада</i></span>
+            <span class="header_actions">
+                <button class="header_round_button like_button"><img src="images/Heart.svg" alt=""></button>
+                <button class="header_round_button"><img src="images/Share-1.svg" alt=""></button>
+            </span>
+        </header>
+
+        <main class="main">
+            <div class="place_content">
+                <img class="place_photo" src="images/DonKebab.png" alt="Don Kebab">
+                <h2 class="place_title">Don Kebab - Брест, Пушкинская улица, 40/1</h2>
+
+                <div class="place_meta">
+                    <span>108 отзывов</span>
+                    <i class="meta_separator"></i>
+                    <img class="rating_icon" src="images/Like.svg" alt="">
+                    <span>84%</span>
+                    <i class="meta_separator"></i>
+                    <img src="images/WC.svg" width="16" alt="">
+                    <span class="text_lime">4,3% (4)</span>
+                </div>
+            </div>
+
+            <div class="place_divider"></div>
+
+            <div class="owner_row">
+                <img class="owner_avatar" src="images/DonKebab_logo.png" alt="">
+                <div class="owner_info">
+                    <b class="owner_name">Don Kebab <u class="verified_badge">✓</u></b>
+                    <small>3 заведения - Брест</small>
+                </div>
+            </div>
+
+            <div class="status_bar">
+                <div class="status_item status_item_ok"><i class="status_dot status_dot_ok"></i>Открыто до 21:30</div>
+                <div class="status_item"><i class="status_dot"></i>Через ~410 м</div>
+            </div>
+
+            <div class="review_block">
+                <div class="review_author">
+                    <span class="review_author_icon"><img src="images/Profile-1.svg" alt=""></span>
+                    Мага <em>• Любитель</em>
+                </div>
+                <p class="review_text">Вкусный шаурма но я бы сделал лучше. А так не плохо можно есть</p>
+                <button class="review_like">
+                    <img class="review_like_icon review_like_off" src="images/Like.svg" alt="">
+                    <img class="review_like_icon review_like_on" src="images/Like_Active.svg" alt="">
+                </button>
+                <a class="review_link" href="review.html">Оставить свой отзыв</a>
+            </div>
+        </main>
+
+        <nav class="tab_bar">
+            <a class="tab_link" href="map.html"><img src="images/Paper Map-1.svg" alt="map"></a>
+            <a class="tab_link" href="favorites.html"><img src="images/Heart-1.svg" alt="favorites"></a>
+            <a class="tab_link" href="profile.html"><img src="images/Profile.svg" alt="profile"></a>
+            <a class="tab_link" href="search.html"><img src="images/Search.svg" alt="search"></a>
+        </nav>
+
+    </div>
+
+    <script src="common.js"></script>
+    <script src="place.js"></script>
+</body>
+</html>
