@@ -1,0 +1,344 @@
+/*
+ * responsive.css — ШаваНада
+ * Адаптивный дизайн: телефон → планшет → ПК
+ *
+ * Подключить ко всем HTML-страницам ПОСЛЕ common.css:
+ *   <link rel="stylesheet" href="responsive.css">
+ *
+ * Брейкпоинты:
+ *   ≤ 599px  — мобильный (поведение без изменений, как было)
+ *   600–1023px — планшет
+ *   ≥ 1024px — десктоп
+ */
+
+/* =====================================================
+   БАЗОВЫЕ ПЕРЕОПРЕДЕЛЕНИЯ (работают на всех размерах)
+   ===================================================== */
+
+/* Убираем фиксированное ограничение 414×896px на широких экранах —
+   тело страницы теперь может занять весь экран, а .app центрируется */
+.app {
+    max-width: 100%;
+    max-height: none;
+    height: 100dvh;
+}
+
+/* =====================================================
+   ПЛАНШЕТ  (600–1023px)
+   ===================================================== */
+@media (min-width: 600px) {
+
+    /* Центрируем «телефон» с красивой рамкой */
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
+        background: #111111;
+    }
+
+    .app {
+        max-width: 480px;
+        max-height: 900px;
+        border-radius: 28px;
+        box-shadow: 0 0 0 6px #1c2120, 0 20px 60px rgba(0,0,0,0.8);
+        overflow: hidden;
+    }
+
+    /* Чуть крупнее шрифт и отступы внутри карточек */
+    .search_item h3,
+    .review_author,
+    .review_text,
+    .place_title,
+    .owner_name {
+        font-size: 18px;
+    }
+
+    .tab_bar {
+        height: 80px;
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+}
+
+/* =====================================================
+   ДЕСКТОП  (≥ 1024px)
+   ===================================================== */
+@media (min-width: 1024px) {
+
+    /* Полноэкранный двухколоночный layout */
+    body {
+        display: grid;
+        grid-template-columns: 1fr minmax(0, 860px) 1fr;
+        grid-template-rows: 1fr;
+        align-items: stretch;
+        min-height: 100dvh;
+        background: #111111;
+        padding: 0;
+    }
+
+    /* .app занимает среднюю колонку, растягивается на полную высоту */
+    .app {
+        grid-column: 2;
+        max-width: 860px;
+        max-height: none;
+        height: 100dvh;
+        border-radius: 0;
+        box-shadow: none;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        overflow: hidden;
+    }
+
+    /* ---- Шапка ---- */
+    .header {
+        height: 72px;
+        padding: 0 36px;
+    }
+
+    .header .logo_text {
+        font-size: 26px;
+    }
+
+    .logo_icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* ---- Нижнее меню → левая вертикальная панель ---- */
+    /* На десктопе заменяем нижний таббар на левый сайдбар */
+    .tab_bar {
+        grid-row: 1 / 4;
+        grid-column: 1;
+
+        /* Вертикальный стек */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+
+        width: 80px;
+        height: 100%;
+        padding: 100px 0 24px;
+
+        border-top: none;
+        border-right: 4px solid var(--orange);
+        border-bottom: none;
+    }
+
+    /* Перемещаем main и header вправо от сайдбара */
+    .app {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+
+    /* Используем CSS grid на .app */
+    .app {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .header {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .main {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .tab_bar {
+        grid-column: 1;
+        grid-row: 1 / 3;
+    }
+
+    /* ---- Улучшенное содержимое для широкого экрана ---- */
+
+    /* Поиск: два столбца */
+    .search_item {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto auto;
+        column-gap: 20px;
+        padding: 20px 28px;
+    }
+
+    .search_photo {
+        grid-row: 1 / 3;
+        width: 200px;
+        height: 160px;
+        border-radius: 14px;
+    }
+
+    .search_item h3 {
+        align-self: end;
+        font-size: 20px;
+    }
+
+    .search_item .place_meta {
+        align-self: start;
+        padding-top: 6px;
+    }
+
+    /* Строка поиска */
+    .search_bar {
+        margin: 24px 28px;
+        height: 52px;
+        font-size: 18px;
+    }
+
+    /* Карточка заведения — шире */
+    .place_content {
+        padding: 32px 40px 0;
+    }
+
+    .place_photo {
+        height: 280px;
+        border-radius: 18px;
+    }
+
+    .place_title {
+        font-size: 24px;
+    }
+
+    .owner_row {
+        padding: 18px 40px;
+    }
+
+    .review_block {
+        padding: 18px 40px;
+    }
+
+    .review_text {
+        font-size: 18px;
+    }
+
+    /* Профиль */
+    .profile_head {
+        padding: 24px 20px;
+        gap: 24px;
+    }
+
+    .profile_avatar {
+        width: 140px;
+        height: 140px;
+    }
+
+    .profile_name {
+        font-size: 28px;
+    }
+
+    .profile_field {
+        padding: 0 40px;
+        margin-bottom: 16px;
+    }
+
+    /* Форма авторизации — чуть больше отступ сверху */
+    .auth_sheet {
+        top: 300px;
+        padding: 60px 80px 0;
+        border-radius: 80px 80px 0 0;
+    }
+
+    .auth_sheet h1 {
+        font-size: 40px;
+    }
+
+    /* Текстовое поле отзыва */
+    .review_textarea {
+        width: calc(100% - 60px);
+        margin: 30px 30px 0;
+        height: 160px;
+        font-size: 18px;
+    }
+
+    /* Кнопка отправки */
+    .send_button {
+        padding: 10px 24px;
+        font-size: 20px;
+    }
+
+    /* Карта */
+    .locate_button {
+        right: 24px;
+        bottom: 80px;
+    }
+
+    .place_card {
+        left: 20px;
+        right: 20px;
+        bottom: 24px;
+    }
+}
+
+/* =====================================================
+   МОБИЛЬНЫЙ (≤ 599px) — точечные исправления
+   ===================================================== */
+@media (max-width: 599px) {
+
+    /* Гарантируем 100% ширину на маленьких экранах */
+    .app {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* Немного уменьшаем фото в поиске, чтобы влезло на маленький экран */
+    .search_photo {
+        width: 42%;
+        height: 120px;
+    }
+
+    .search_item h3 {
+        font-size: 17px;
+    }
+
+    /* Шапка компактнее */
+    .header {
+        height: 72px;
+        padding: 0 16px;
+    }
+
+    /* Таббар — учитываем нижнюю безопасную зону (iPhone Home Indicator) */
+    .tab_bar {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    /* Профиль: аватар поменьше */
+    .profile_avatar {
+        width: 108px;
+        height: 108px;
+    }
+
+    .profile_name {
+        font-size: 24px;
+    }
+
+    /* Кнопки на странице места */
+    .status_item {
+        padding: 0 18px;
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   ОБЩИЕ ДОСТУПНОСТЬ И UX
+   ===================================================== */
+
+/* Принудительный focus-visible для клавиатурной навигации */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 2px;
+}
+
+/* Уже существует в common.css, дублируем для надёжности */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
